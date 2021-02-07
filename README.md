@@ -10,3 +10,8 @@ Things you may want to cover:
   * rvm ruby-2.7.0
   * Rails 6.1.1
   * yarn 1.22.4
+
+* Steps
+  * rails new rails_react_recipe -d=postgresql -T --webpack=react --skip-coffee
+  * yarn add react-router-dom bootstrap jquery popper.js
+  
