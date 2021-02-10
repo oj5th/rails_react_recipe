@@ -5,8 +5,8 @@ class Recipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = { recipe: { ingredients: "" } };
-
     this.addHtmlEntities = this.addHtmlEntities.bind(this);
+    this.deleteRecipe = this.deleteRecipe.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +27,32 @@ class Recipe extends React.Component {
       })
       .then(response => this.setState({ recipe: response }))
       .catch(() => this.props.history.push("/recipes"));
+  }
+
+  deleteRecipe() {
+    const {
+      match: {
+        params: { id }
+      }
+    } = this.props;
+    const url = `/api/v1/destroy/${id}`;
+    const token = document.querySelector('meta[name="csrf-token"]').content;
+
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then(() => this.props.history.push("/recipes"))
+      .catch(error => console.log(error.message));
   }
 
   addHtmlEntities(str) {
@@ -80,7 +106,7 @@ class Recipe extends React.Component {
               />
             </div>
             <div className="col-sm-12 col-lg-2">
-              <button type="button" className="btn btn-danger">
+              <button type="button" className="btn btn-danger" onClick={this.deleteRecipe}>
                 Delete Recipe
               </button>
             </div>
