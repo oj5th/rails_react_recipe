@@ -14,7 +14,12 @@ Things you may want to cover:
 * Steps
   * rails new rails_react_recipe -d=postgresql -T --webpack=react --skip-coffee
   * yarn add react-router-dom bootstrap jquery popper.js
+  * npm install react-router-dom --save
+  * npm install --save redux babel-polyfill reselect react-redux
+  * yarn install
 
 * Source
   * https://dev.to/jack/organizing-your-react-app-into-modules-d6n
+  * https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend
+  * https://www.freecodecamp.org/news/how-to-create-a-rails-project-with-a-react-and-redux-front-end-8b01e17a1db/
   
