@@ -58,3 +58,38 @@
    width: 100%;
    opacity: 0.4;
  }
+
+
+/* Navbar design: TO BE REPLACE */
+ .App-nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.App-nav li {
+  padding: 10px;
+}
+
+.App-nav li a {
+  text-decoration: none;
+}
+
+.App-nav li.active {
+  background-color: #626C80;
+}
+
+.App-nav li:hover {
+  background-color: #626C80;
+  cursor: pointer;
+}
+
+.App-content {
+  padding: 10px;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  color: #282c34;
+}
+
+ul {
+  list-style-type: none;
+}
