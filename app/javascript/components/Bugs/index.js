@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Bugs = () => (
-    <div>Bugs Module</div>
-);
+class Bugs extends Component {
+  render() {
+    return (
+      <div>Bugs Module</div>
+    )
+  }
+}
 
-export default {
-    routeProps: {
-        path: '/bugs',
-        component: Bugs,
-    },
-    name: 'Bugs',
-};
+export default Bugs;

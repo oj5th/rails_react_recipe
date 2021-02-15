@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Analytics = () => (
-    <div>Analytics Module</div>
-);
-
-export default {
-    routeProps: {
-        path: '/analytics',
-        component: Analytics
-    },
-    name: 'Analytics',
+class Analytics extends Component {
+  render() {
+    return (
+      <div>Analytics Module</div>
+    )
+  }
 }
+
+export default Analytics;

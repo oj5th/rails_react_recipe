@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Dashboard = () => (
-    <div>Dashboard Module</div>
-);
+class Dashboard extends Component {
+  render() {
+    return (
+      <div>Dashboard Module</div>
+    )
+  }
+}
 
-export default {
-    routeProps: {
-        path: '/',
-        exact: true,
-        component: Dashboard,
-    },
-    name: 'Dashboard',
-};
+export default Dashboard;

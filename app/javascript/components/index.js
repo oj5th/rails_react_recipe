@@ -1,11 +1,11 @@
-import Analytics from './Analytics';
-import Dashboard from './Dashboard';
-import Bugs from './Bugs';
-import Recipe from './Recipe';
+import Analytics from './Analytics/routes';
+import Dashborad from './Dashboard/routes';
+import Bugs from './Bugs/routes';
+import Recipe from './Recipe/routes';
 
 export default [
-    Dashboard,
-    Analytics,
-    Bugs,
-    Recipe
+  Dashborad,
+  Analytics,
+  Bugs,
+  Recipe
 ];
