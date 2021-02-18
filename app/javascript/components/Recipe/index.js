@@ -9,13 +9,14 @@ class Recipe extends Component {
         Recipes Module
         <ul>
           {
-            this.props.recipes.map(user => (
-              <li key={ user.id }>
-                { user.id }
+            this.props.recipes.map(recipe => (
+              <li key={ recipe.id }>
+                { recipe.id }
               </li>
             ))
           }
         </ul>
+        <button onClick={() => this.props.ALL_RECIPES()}>Show Recipe</button>
       </div>
     )
   }
