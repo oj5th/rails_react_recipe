@@ -16,6 +16,8 @@ Things you may want to cover:
   * yarn add react-router-dom bootstrap jquery popper.js
   * npm install react-router-dom --save
   * npm install --save redux babel-polyfill reselect react-redux
+  * npm install --save redux-thunk
+  * npm install --save-dev redux-devtools-extension
   * yarn install
 
 * Source
