@@ -2,34 +2,34 @@ import React from "react"
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-const GET_THINGS_REQUEST = 'GET_THINGS_REQUEST';
-const GET_THINGS_SUCCESS = 'GET_THINGS_SUCCESS';
+const GET_RECIPES_REQUEST = 'GET_RECIPES_REQUEST';
+const GET_RECIPES_SUCCESS = 'GET_RECIPES_SUCCESS';
 
 function ALL_RECIPES() {
-  console.log('getThings() Action!!')
+  console.log('ALL_RECIPES() Action!!')
   return dispatch => {
-    dispatch({ type: GET_THINGS_REQUEST });
+    dispatch({ type: GET_RECIPES_REQUEST });
     return fetch(`/api/v1/recipes/index`)
     .then(response => response.json())
-    .then(json => dispatch(getThingsSuccess(json)))
+    .then(json => dispatch(getRecipesSuccess(json)))
     .catch(error => console.log(error));
   }
 }
 
-export function getThingsSuccess(json) {
-  console.log('getThingsSuccess() Action!!')
+export function getRecipesSuccess(json) {
+  console.log('getRecipesSuccess() Action!!')
   console.log(json)
   return {
-    type: GET_THINGS_SUCCESS,
+    type: GET_RECIPES_SUCCESS,
     json
   }
 }
 
 class Recipe extends React.Component {
   render () {
-    const { things } = this.props.things;
-    const thingsList = things.map((thing) => {
-      return <li key={thing.id}>{thing.id} {thing.name}</li>
+    const { recipes } = this.props.recipes;
+    const recipesList = recipes.map((recipe) => {
+      return <li key={recipe.id}>{recipe.id} {recipe.name}</li>
     })
 
     return (
@@ -38,16 +38,16 @@ class Recipe extends React.Component {
         <br/>
         <br/>
         <br/>
-        <button className="getThingsBtn" onClick={() => this.props.ALL_RECIPES()}>RECIPES</button>
+        <button className="getRecipesBtn" onClick={() => this.props.ALL_RECIPES()}>RECIPES</button>
         <br/>
-        <ul>{ thingsList }</ul>
+        <ul>{ recipesList }</ul>
       </React.Fragment>
     );
   }
 }
 
 const structuredSelector = createStructuredSelector({
-  things: state => state.things,
+  recipes: state => state.recipes,
 })
 
 const mapDispatchToProps = { ALL_RECIPES };

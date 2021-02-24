@@ -3,11 +3,11 @@ const initialReducer = (state = [], action) => {
   console.log(action.type);
   console.log("ACTION ON REDUCER END")
   switch (action.type) {
-    case "GET_THINGS_SUCCESS":
-      return { things: action.json }
+    case "GET_RECIPES_SUCCESS":
+      return { recipes: action.json }
     default:
       return { 
-        things: [
+        recipes: [
           {
             id: 1,
             name: "test",
