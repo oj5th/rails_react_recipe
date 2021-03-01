@@ -18,6 +18,7 @@ Things you may want to cover:
   * npm install --save redux babel-polyfill reselect react-redux
   * npm install --save redux-thunk
   * npm install --save-dev redux-devtools-extension
+  * npm install axios
   * yarn install
 
 * Source

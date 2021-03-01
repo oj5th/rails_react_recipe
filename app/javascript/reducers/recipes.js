@@ -3,7 +3,7 @@ const initialReducer = (state = [], action) => {
   console.log(action.type);
   console.log("ACTION ON REDUCER END")
   switch (action.type) {
-    case "GET_RECIPES_SUCCESS":
+    case "GET_RECIPE_LIST":
       return { recipes: action.json }
     default:
       return { 
